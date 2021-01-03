@@ -7,7 +7,7 @@ URL = (f"https://www.indeed.com/jobs?as_and=python&as_phr=&as_any=&as_not=&as_tt
 def extract_pages():
     result = requests.get(URL)
 
-    soup = BeautifulSoup(result.text, 'html.parser')
+    soup = BeautifulSoup(result.text, "html.parser")
 
     pagination = soup.find("div", {"class": "pagination"})
 
@@ -22,6 +22,9 @@ def extract_pages():
 def extract_indeed_jobs(last_page):
     jobs = []
     for page in range(last_page):
-      results = requests.get(f"{URL}&start={page*LIMIT}")
-      print(results.status_code)
-    return jobs
+      result = requests.get(f"{URL}&start={last_page*LIMIT}")
+      soup = BeautifulSoup(result.text, "html.parser")
+      results= soup.find_all("div", {"class" : "jobsearch-SerpJobCard"})
+      for result in results:
+        anchor = result.find("a")["title"]
+        print(anchor)

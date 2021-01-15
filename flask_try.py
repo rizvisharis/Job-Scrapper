@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask("SuperScarpper")
 
 @app.route("/")
 def home():
-    return "Hello! Welcome to Job Scrapper!"\
+    return render_template("form.html")
 
 @app.route("/contact")
 def contact():

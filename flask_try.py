@@ -12,8 +12,7 @@ def contact():
 
 @app.route("/report")
 def report():
-    print(request.arg.get('word'))
-    # word = request.arg.get('word')
-    return "hii"
+    word = request.args.get('word', '')
+    return render_template("report.html", searching_by = word)
 
-app.run(host = "0.0.0.0")
+app.run()

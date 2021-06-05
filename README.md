@@ -1,3 +1,42 @@
-## Run the flask_try.py file
-# its run on local Development server
-enter input what job information you want its extract from Stack-overflow and Indeed jobs websites 
+# Web Scraping Tool 
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/rizvisharis/Job-Scrapper.git
+```
+
+Go to the project directory
+
+```bash
+  cd Job-Scrapper
+```
+
+Install dependencies
+
+```bash
+  pip install
+```
+
+Start the server
+
+```bash
+  python flask_try.py
+```
+
+  
+## Features
+Extracting Job post from
+- Stackoverflow Jobs
+- Indeed Jobs
+- easily get CSV formats
+
+  
+## Tech Stack
+
+**Language:** Python, Html
+
+**Library:** BeautifulSoup
+
+  
